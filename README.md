@@ -25,6 +25,7 @@ TIP: Python may already be installed on Mac. To verify installation, type `pytho
   - Place this folder along your home path (example: /Users/username/phantomjs)
   - Add the directory containing the phantomJS.exe (for example, on my machine the file is located at: /Users/username/phantomjs/bin/phantomjs.exe)  to your OS environment variable PATH (for example, add it your bash_profile file [~/.bash_profile] and then reload the bash_profile file). 
   - Verify PhantomJS installation at the command line: `phantomjs --version`
+3. Open the screenshotsPY.py file and enter the username, password, and API token for a Skytap account you want the script to use.
 
 # Generating a set of screenshots
 1. From the command line, navigate to the location where you saved the script files.
