@@ -17,14 +17,14 @@ The .csv contains the list of all possible screenshots and data about them.
 
 # Installing the Screenshot Automation Script
 1. Install Python 2.7 (https://www.python.org/downloads/) and the Requests python library (http://docs.python-requests.org/en/master/user/install/#install) 
-TIP: Python may already be installed on Mac. To verify installation, type python at the command line
+TIP: Python may already be installed on Mac. To verify installation, type `python` at the command line
 2. Install PhantomJS 2.1 (http://phantomjs.org/). 
-  This is a bit tricky and online instructions aren’t great, so here are the full instructions for doing this on a Mac.
+  For example, on a Mac:
   - Download the .zip installation archive from http://phantomjs.org/.
   - Extract the contents. Rename the extracted folder to something simple (example: phantomjs).
   - Place this folder along your home path (example: /Users/username/phantomjs)
   - Add the directory containing the phantomJS.exe (for example, on my machine the file is located at: /Users/username/phantomjs/bin/phantomjs.exe)  to your OS environment variable PATH (for example, add it your bash_profile file [~/.bash_profile] and then reload the bash_profile file). 
-  - Verify PhantomJS installation at the command line: phantomjs --version
+  - Verify PhantomJS installation at the command line: `phantomjs --version`
 
 # Generating a set of screenshots
 1. From the command line, navigate to the location where you saved the script files.
