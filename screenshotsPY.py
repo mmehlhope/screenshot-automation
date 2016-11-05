@@ -136,17 +136,17 @@ class RestClient(object):
 
 def generate_screenshots(user, filter_name):
     if len(user.screenshotlist) > chunksize:
-        run_in_chunks(user.screenshotlist)
+        run_in_chunks(user, filter_name)
     else:
         switch_to_PhantomJS(filter_name, user.screenshotlist, user.username, user.password)
 
-def run_in_chunks(listtobreakdown):
-    chunks = [listtobreakdown[x:x+chunksize] for x in xrange(0, len(listtobreakdown), chunksize)]
+def run_in_chunks(user, filter_name):
+    chunks = [user.screenshotlist[x:x+chunksize] for x in xrange(0, len(user.screenshotlist), chunksize)]
     print "breaking into " + str(len(chunks)) + " batches"
     chunknum = 0
     for chunk in chunks:
         print "starting batch #" + str(chunknum)
-        switch_to_PhantomJS(chunk, user.username, user.password)
+        switch_to_PhantomJS(filter_name, chunk, user.username, user.password)
         chunknum = chunknum + 1
         print "pausing for 20 seconds"
         sleep(20)
@@ -175,7 +175,7 @@ def main():
     # add users the phantomJS script can use to log into Skytap as
     # uncomment lines as needed and replace "instertusername", "insertpassword", "") with the correct username, password, and API token.
     # user = SkytapUser("user", "insertusername", "insertpassword", "")
-    admin = SkytapUser("admin", "instertusername", "insertpassword", "")
+    admin = SkytapUser("admin", "insertusername", "insertpassword", "")
     
     # read from .csv file to create a list of all possible screenshots
     allscreenshots = []
@@ -192,6 +192,8 @@ def main():
     
     # for each skytap user, use PhantomJs to log into Skytap as the user and take a series of screenshots
     for user in SkytapUser._registry:
+        print user.name
+        print user.screenshotlist
         if len(user.screenshotlist) > 0:
             generate_screenshots(user, filter_name)
 
