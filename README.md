@@ -1,17 +1,17 @@
 # screenshot-automation
 
 ## Overview
-The "screenshot automation script" uses PhantomJS and Python to take a series of screenshots in your Skytap account and save the screenshots to your local machine. It can run environments, loop through a series of screenshots as a logged in Skytap user, and then suspend any environments that it ran.
+The "screenshot automation script" uses PhantomJS and Python to take a series of screenshots in your Skytap account and save the screenshots to your local machine. It can run environments, loop through a series of screenshots as one or more logged in Skytap users, and then suspend any environments that it ran.
 
 The "screenshot automation script" is composed of 3 files:
 * allscreenshots.csv
 The .csv contains the list of all possible screenshots and data about them. 
 * screenshotsPY.py
-  The .py file is a wrapper (of sorts) that does all of the initial data manipulation and REST API calls. It narrows down the list of screenshots to take (based on a command line argument), sorts them into relevant screenshot lists by user role, starts environments, passes data along to the PhantomJS scripts (and runs that script as many times as needed), and then suspends environments.
+  The .py file is a wrapper (of sorts) that does all of the initial data manipulation and REST API calls. It narrows down the list of screenshots to take (based on a command line argument), starts environments (if needed), passes data along to PhantomJS (in multiple batches, if needed), and then suspends environments (if needed).
 * screenshotsJS.js
-  The .js file signs into Skytap and loops through the list of relevant screenshots. For each screenshot, PhantomJS:
-  * Loads the page in a defined browser windows size (docs and videos use different screen sizes)
-  * Clicks, highlights, and/or crops to any elements as requested
+  The .js file signs into Skytap and loops through the list of screenshots that need to be taken. For each screenshot, PhantomJS:
+  * Loads the page in a defined browser window size (docs and videos use different screen sizes)
+  * Clicks, highlights, and/or crops to a DOM element as requested
   * Takes the screenshot and saves it to a local folder
 
 # Installing the Screenshot Automation Script
