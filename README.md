@@ -12,7 +12,6 @@ The .csv contains the list of all possible screenshots and data about them.
   The .js file signs into Skytap and loops through the list of relevant screenshots. For each screenshot, PhantomJS:
   * Loads the page in a defined browser windows size (docs and videos use different screen sizes)
   * Clicks, highlights, and/or crops to any elements as requested
-  * Sanitizes the screen (removes Skytap logo, removes footer, changes test region names to real region names, obscures PIPs, etc.)
   * Takes the screenshot and saves it to a local folder
 
 # Installing the Screenshot Automation Script
