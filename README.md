@@ -40,14 +40,14 @@ For each screenshot, enter the following properties:
 
 | Column name   | Explanation           | Example  |
 | :------------- |:-------------| :-----|
-| pageURL | This is the page that PhantomJS should navigate to. Generally, this is page you’ll be taking a screenshot of.     | https://cloud.skytap.com/configurations/1234567?sort=name&thumbnails=shown |
-| imgname      | Name of the image file. PhantomJS will automatically add ".png" to the end of the image.     |   scr-env-main-details |
+| pageURL (required) | This is the page that PhantomJS should navigate to. Generally, this is page you’ll be taking a screenshot of.     | https://cloud.skytap.com/configurations/1234567?sort=name&thumbnails=shown |
+| imgname (required)     | Name of the image file. PhantomJS will automatically add ".png" to the end of the image.     |   scr-env-main-details |
 | click | If PhantomJS should click something, enter the DOM element for PhantomJS to click. If there are multiple matching DOM elements, PhantomJS will click the first one.     |    button.toggle-multi-select-mode  |
-| highlight | If PhantomJS should highlight something, enter the DOM element for PhantomJS to highlight. If there are multiple matching DOM elements, PhantomJS will highlight the first one.     |    div.filtering-options  (NOTE: This part of the script executes after click, which is useful for cropping to new dialog windows) |
+| highlight | If PhantomJS should highlight something, enter the DOM element for PhantomJS to highlight. If there are multiple matching DOM elements, PhantomJS will highlight the first one.     |    div.filtering-options  (NOTE: This part of the script executes after click, which is useful for highlighting items in new dialog windows) |
 | crop | If PhantomJS should crop the screenshot to show just an element on this page, enter the DOM element that PhantomJS should crop the image to. As usual, if there are multiple of these, PhantomJS will use the first one.   |    div#content  (NOTE: This part of the script executes after click, which is useful for cropping to new dialog windows) |
-| cliname | This is the command line argument name that you will use to generate this screenshot. To run a set of screenshots together from the script, give them the same cliname.  |   new  |
-| permissionLevel | Permission level of the screenshot user. The script is currently configured to log in as one of two users: user or admin.  |  admin  |
-| group  | Used to generate all of the doc or all of the video screenshots from one command. Also used to indicate the screen resolution size. The script is currently configured to use "docs" or "videos" |  docs  |
+| cliname (required) | This is the command line argument name that you will use to generate this screenshot. To run a set of screenshots together from the script, give them the same cliname.  |   new  |
+| permissionLevel (required) | Permission level of the screenshot user. The script is currently configured to log in as one of two users: user or admin.  |  admin  |
+| group (required)  | Used to generate all of the doc or all of the video screenshots from one command. Also used to indicate the screen resolution size. The script is currently configured to use "docs" or "videos" |  docs  |
 | run  |If the screenshot needs a running environment, enter the environment ID here. The script will start the environment before taking screenshot and then suspend the environment after taking screenshots.  |  1234567  |
 
 # Suggestions
