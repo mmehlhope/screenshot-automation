@@ -10,7 +10,7 @@ The .csv contains the list of all possible screenshots and data about them.
   The .py file is a wrapper (of sorts) that does all of the initial data manipulation and REST API calls. It narrows down the list of screenshots to take (based on a command line argument), starts environments (if needed), passes data along to PhantomJS (in multiple batches, if needed), and then suspends environments (if needed).
 * screenshotsJS.js
   The .js file signs into Skytap and loops through the list of screenshots that need to be taken. For each screenshot, PhantomJS:
-  * Loads the page in a defined browser window size (docs and videos use different screen sizes)
+  * Loads the page in a defined browser window size
   * Clicks, highlights, and/or crops to a DOM element as requested
   * Takes the screenshot and saves it to a local folder
 
