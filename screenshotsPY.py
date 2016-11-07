@@ -173,9 +173,9 @@ def main():
         filter_name = sys.argv[1]
 
     # add users the phantomJS script can use to log into Skytap as
-    # uncomment lines as needed and replace "instertusername", "insertpassword", "") with the correct username, password, and API token.
-    # user = SkytapUser("user", "insertusername", "insertpassword", "")
-    admin = SkytapUser("admin", "insertusername", "insertpassword", "")
+    # uncomment lines as needed and replace "instertusername", "insertpassword", "insertAPItoken") with the correct username, password, and API token.
+    # user = SkytapUser("user", "insertusername", "insertpassword", "insertAPItoken")
+    admin = SkytapUser("admin", "insertusername", "insertpassword", "insertAPItoken")
     
     # read from .csv file to create a list of all possible screenshots
     allscreenshots = []
